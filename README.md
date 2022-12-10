@@ -1,2 +1,2 @@
 # TalkGPT
-Allows you to easily talk with ChatGPT
+Allows you to easily talk with OpenAI's ChatGPT
