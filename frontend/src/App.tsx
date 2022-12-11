@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition';
 import { debounce } from 'underscore';
 const synth = window.speechSynthesis;
-const voices = synth.getVoices();
 function App() {
     const {
         transcript,
@@ -12,14 +11,16 @@ function App() {
         resetTranscript,
         browserSupportsSpeechRecognition,
     } = useSpeechRecognition();
-    const [ gptResponse, setGptResponse ] = useState('')
+    const [ gptResponse, setGptResponse ] = useState('');
+    const [ loading, setLoading ] = useState(false);
     const sendToChatGPT = async () => {
-        // ensure the API is properly authenticated
+        setLoading(true);
         const resp = await (await fetch(`${import.meta.env.VITE_BACKEND_URL}/gpt/${transcript}`)).json();
         const utterThis = new SpeechSynthesisUtterance(resp.answer);
-        utterThis.voice = voices[2];
+        utterThis.voice = synth.getVoices()[2];
         synth.speak(utterThis);
         setGptResponse(resp.answer);
+        setLoading(false);
     }
     const debouncedSendToChatGPT = debounce(sendToChatGPT, 3000, false);
     if (!browserSupportsSpeechRecognition) {
@@ -34,12 +35,17 @@ function App() {
     <div className="App">
         <div>
             <p>Microphone: {listening ? 'on' : 'off'}</p>
-            <button onClick={SpeechRecognition.startListening}>Start</button>
+            <button onClick={() => SpeechRecognition.startListening()}>Start</button>
             <button onClick={SpeechRecognition.stopListening}>Stop</button>
             <button onClick={resetTranscript}>Reset</button>
             <p>{transcript}</p>
+            { loading ? <div className="loader">
+                    <div className="inner one"></div>
+                    <div className="inner two"></div>
+                    <div className="inner three"></div>
+                     </div>
+                : '' }
             <p>{gptResponse}</p>
-            {import.meta.env.VITE_BACKEND_URL}
         </div>
     </div>
   )
