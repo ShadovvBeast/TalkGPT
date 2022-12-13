@@ -37,8 +37,9 @@
   },
   "dependencies": {
     "@tsconfig/node18": "^1.0.1",
-    "chatgpt": "^2.0.5",
+    "chatgpt": "^2.3.0",
     "cors": "^2.8.5",
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "puppeteer": "^19.4.0"
   }
 }
