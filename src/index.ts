@@ -26,5 +26,5 @@ app.get('/gpt/:message', async (req, res) => {
 });
 
 app.listen(port, () => {
-    console.log(`Example app listening on port ${port}`)
+    console.log(`TalkGPT listening on port ${port}`)
 });

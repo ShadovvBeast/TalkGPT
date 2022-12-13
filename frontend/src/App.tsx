@@ -15,7 +15,7 @@ function App() {
     const [ loading, setLoading ] = useState(false);
     const sendToChatGPT = async () => {
         setLoading(true);
-        const resp = await (await fetch(`${import.meta.env.VITE_BACKEND_URL}/gpt/${transcript}`)).json();
+        const resp = await (await fetch(`${import.meta.env.VITE_BACKEND_URL}/gpt/${transcript}`, {mode: 'no-cors'})).json();
         const utterThis = new SpeechSynthesisUtterance(resp.answer);
         utterThis.voice = synth.getVoices()[2];
         synth.speak(utterThis);
