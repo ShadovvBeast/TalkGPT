@@ -1,6 +1,6 @@
 # TalkGPT
 
-TalkGPT is a node.js software that allows you to easily interact with GPT-3, the state-of-the-art language model developed by OpenAI. With TalkGPT, you can generate human-like text in a variety of styles and formats.
+TalkGPT allows you to easily interact with ChatGPT, the state-of-the-art language model developed by OpenAI. With TalkGPT, you can talk to ChatGPT naturally, with your voice, and it will answer with a voice as well!
 
 ## Prerequisites
 
