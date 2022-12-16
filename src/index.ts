@@ -1,4 +1,4 @@
-import { ChatGPTAPI, getOpenAIAuth } from 'chatgpt'
+import { ChatGPTAPIBrowser } from 'chatgpt'
 import express from 'express';
 import cors from 'cors';
 const app = express()
@@ -8,20 +8,15 @@ const port = 3000;
 app.get('/', (req, res) => {
     res.send('OK')
 });
+const api = new ChatGPTAPIBrowser({
+    email: process.env.OPENAI_EMAIL!,
+    password: process.env.OPENAI_PASSWORD!
+});
 
-const openAIAuth = await getOpenAIAuth({
-    email: process.env.OPENAI_EMAIL,
-    password: process.env.OPENAI_PASSWORD
-})
-const api = new ChatGPTAPI({
-   ...openAIAuth,
-    markdown: false
-})
+await api.init();
 
 app.get('/gpt/:message', async (req, res) => {
     try {
-        // ensure the API is properly authenticated
-        await api.ensureAuth();
         const response = await api.sendMessage(req.params.message);
         res.json({answer: response});
     } catch (e: any) {

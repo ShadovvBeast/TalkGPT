@@ -265,16 +265,18 @@ character-entities@^2.0.0:
   resolved "https://registry.yarnpkg.com/character-entities/-/character-entities-2.0.2.tgz#2d09c2e72cd9523076ccb21157dff66ad43fcc22"
   integrity sha512-shx7oQ0Awen/BRIdkjkvz54PnEEI/EjwXDSIZp86/KKdbafHh1Df/RYGBhn4hbe2+uKC9FnT5UCEdyPz3ai9hQ==
 
-chatgpt@^2.3.2:
-  version "2.3.2"
-  resolved "https://registry.yarnpkg.com/chatgpt/-/chatgpt-2.3.2.tgz#28f9f10407ea3d9dfd2710738bad4aa0f7f3a222"
-  integrity sha512-ybidyrikO30O3KjuaiwyG2WQFnIHWiwv0o7Cf06rECO49C3ptMwVu3kLJt4brgjvnSNPDLWM6IpjjSiJ3bduDQ==
+chatgpt@^2.5.0:
+  version "2.5.0"
+  resolved "https://registry.yarnpkg.com/chatgpt/-/chatgpt-2.5.0.tgz#a58995b57eb348d1fa8302857a836124d9d3f47a"
+  integrity sha512-PHQPE0IO0s8Q94+rSP5K2OjrSLxHkwunGDEMXLxAa0F+e6fhleDWR9msQnC9hZmSqM5yhwzqXQye2UBlUBITrQ==
   dependencies:
     delay "^5.0.0"
     eventsource-parser "^0.0.5"
     expiry-map "^2.0.0"
+    html-to-md "^0.8.3"
     p-timeout "^6.0.0"
     puppeteer-extra "^3.3.4"
+    puppeteer-extra-plugin-recaptcha "^3.6.6"
     puppeteer-extra-plugin-stealth "^2.11.1"
     remark "^14.0.2"
     strip-markdown "^5.0.0"
@@ -641,6 +643,11 @@ has@^1.0.3:
   dependencies:
     function-bind "^1.1.1"
 
+html-to-md@^0.8.3:
+  version "0.8.3"
+  resolved "https://registry.yarnpkg.com/html-to-md/-/html-to-md-0.8.3.tgz#9533017335b18b954317af74936d39edf755613b"
+  integrity sha512-Va+bB1YOdD6vMRDue9/l7YxbERgwOgsos4erUDRfRN6YE0B2Wbbw8uAj6xZJk9A9vrjVy7mG/WLlhDw6RXfgsA==
+
 http-errors@2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/http-errors/-/http-errors-2.0.0.tgz#b7774a1486ef73cf7667ac9ae0858c012c57b9d3"
@@ -848,7 +855,7 @@ media-typer@0.3.0:
   resolved "https://registry.yarnpkg.com/media-typer/-/media-typer-0.3.0.tgz#8710d7af0aa626f8fffa1ce00168545263255748"
   integrity sha512-dq+qelQ9akHpcOl/gUVRTxVIOkAJ1wR3QAvb4RsVjS8oVoFjDGTc679wJYmUmknUF5HwMLOgb5O+a3KxfWapPQ==
 
-merge-deep@^3.0.1:
+merge-deep@^3.0.1, merge-deep@^3.0.2:
   version "3.0.3"
   resolved "https://registry.yarnpkg.com/merge-deep/-/merge-deep-3.0.3.tgz#1a2b2ae926da8b2ae93a0ac15d90cd1922766003"
   integrity sha512-qtmzAS6t6grwEkNrunqTBdn0qKwFgNWvlxUbAV8es9M7Ot1EbyApytCnvE0jALPa46ZpKDUo527kKiaWplmlFA==
@@ -1248,6 +1255,15 @@ puppeteer-core@19.4.0:
     tar-fs "2.1.1"
     unbzip2-stream "1.4.3"
     ws "8.10.0"
+
+puppeteer-extra-plugin-recaptcha@^3.6.6:
+  version "3.6.6"
+  resolved "https://registry.yarnpkg.com/puppeteer-extra-plugin-recaptcha/-/puppeteer-extra-plugin-recaptcha-3.6.6.tgz#431a7c8a8a81e7dcf48b6a0e1b9d674783acfbd7"
+  integrity sha512-SVbmL+igGX8m0Qg9dn85trWDghbfUCTG/QUHYscYx5XgMZVVb0/v0a6MqbPdHoKmBx5BS2kLd6rorMlncMcXdw==
+  dependencies:
+    debug "^4.1.1"
+    merge-deep "^3.0.2"
+    puppeteer-extra-plugin "^3.2.2"
 
 puppeteer-extra-plugin-stealth@^2.11.1:
   version "2.11.1"
