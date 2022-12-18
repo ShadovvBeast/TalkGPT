@@ -265,10 +265,10 @@ character-entities@^2.0.0:
   resolved "https://registry.yarnpkg.com/character-entities/-/character-entities-2.0.2.tgz#2d09c2e72cd9523076ccb21157dff66ad43fcc22"
   integrity sha512-shx7oQ0Awen/BRIdkjkvz54PnEEI/EjwXDSIZp86/KKdbafHh1Df/RYGBhn4hbe2+uKC9FnT5UCEdyPz3ai9hQ==
 
-chatgpt@^2.5.0:
-  version "2.5.0"
-  resolved "https://registry.yarnpkg.com/chatgpt/-/chatgpt-2.5.0.tgz#a58995b57eb348d1fa8302857a836124d9d3f47a"
-  integrity sha512-PHQPE0IO0s8Q94+rSP5K2OjrSLxHkwunGDEMXLxAa0F+e6fhleDWR9msQnC9hZmSqM5yhwzqXQye2UBlUBITrQ==
+chatgpt@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/chatgpt/-/chatgpt-3.0.0.tgz#c0fb09a97fa14accac032a1257b985f50045cdf2"
+  integrity sha512-XtlIKMiJvhJj2ds6H5E96gIgHNZOPqWlt257TvmYETBdU0riq8oFckl9ms6s0hgGhrVapTv4NF5p87bNzMioyA==
   dependencies:
     delay "^5.0.0"
     eventsource-parser "^0.0.5"

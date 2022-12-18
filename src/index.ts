@@ -4,16 +4,24 @@ import cors from 'cors';
 const app = express()
 app.use(cors());
 const port = 3000;
+import * as pup from './puppeteer.js';
 
 app.get('/', (req, res) => {
     res.send('OK')
 });
-const api = new ChatGPTAPIBrowser({
-    email: process.env.OPENAI_EMAIL!,
-    password: process.env.OPENAI_PASSWORD!
-});
 
-await api.init();
+let api: any;
+if (process.env.USE_CHATGPT_API) {
+    api = new ChatGPTAPIBrowser({
+        email: process.env.OPENAI_EMAIL!,
+        password: process.env.OPENAI_PASSWORD!,
+        debug: true,
+    });
+} else {
+    api = pup;
+}
+
+await api.initSession();
 
 app.get('/gpt/:message', async (req, res) => {
     try {
