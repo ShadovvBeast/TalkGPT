@@ -29,6 +29,8 @@ To install TalkGPT, follow these steps:
 
     ```
     yarn
+    cd frontend
+    yarn
     ```
 4. Set up the env vars required by the underlying package, chatgpt (the unofficial API)
 5. You are now ready to use TalkGPT!
@@ -37,17 +39,14 @@ To install TalkGPT, follow these steps:
 
 To use TalkGPT, run the following commands in your one terminal:
 
-    ```
     yarn build
     yarn start
-    ```
 
 This will start the TalkGPT server, then in another terminal run:
 
-    ```
     cd frontend
     yarn start
-    ```
+    
 This will start client (running on Vite)
 
 Now you can talk to chatgpt!
