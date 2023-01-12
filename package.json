@@ -37,10 +37,11 @@
     "typescript": "^4.9.4"
   },
   "dependencies": {
+    "@sparticuz/chromium": "109",
     "@tsconfig/node18": "^1.0.1",
-    "chatgpt": "^3.0.0",
+    "chatgpt": "^3.4.1",
     "cors": "^2.8.5",
     "express": "^4.18.2",
-    "puppeteer": "^19.4.0"
+    "puppeteer-core": "^19.4.1"
   }
 }

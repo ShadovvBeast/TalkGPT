@@ -3,7 +3,7 @@ import express from 'express';
 import cors from 'cors';
 const app = express()
 app.use(cors());
-const port = 3000;
+const port = 3001;
 import * as pup from './puppeteer.js';
 
 app.get('/', (req, res) => {
@@ -16,6 +16,7 @@ if (process.env.USE_CHATGPT_API) {
         email: process.env.OPENAI_EMAIL!,
         password: process.env.OPENAI_PASSWORD!,
         debug: true,
+        markdown: false,
     });
 } else {
     api = pup;
