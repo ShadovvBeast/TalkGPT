@@ -1,6 +1,6 @@
 {
   "name": "talkgpt",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Allows you to easily talk with OpenAI's ChatGPT",
   "main": "index.js",
   "type": "module",
