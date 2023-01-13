@@ -1,10 +1,12 @@
-import { ChatGPTAPIBrowser } from 'chatgpt'
+import {ChatGPTAPIBrowser} from 'chatgpt'
 import express from 'express';
 import cors from 'cors';
+
 const app = express()
 app.use(cors());
 const port = 3001;
 import * as pup from './puppeteer.js';
+import * as pawan from './pawan.js';
 
 app.get('/', (req, res) => {
     res.send('OK')
@@ -18,6 +20,8 @@ if (process.env.USE_CHATGPT_API) {
         debug: true,
         markdown: false,
     });
+} else if (process.env.CHATGPT_SESSION_TOKEN) {
+    api = pawan;
 } else {
     api = pup;
 }
