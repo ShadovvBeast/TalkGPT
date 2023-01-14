@@ -32,8 +32,9 @@ To install TalkGPT, follow these steps:
     cd frontend
     yarn
     ```
-4. Set up the env vars required by one of the underlying packages, either chatgpt (the unofficial API) or Pawan's chatgpt-io (recommended) which only requires one env var (CHATGPT_SESSION_TOKEN) 
-5. You are now ready to use TalkGPT!
+4. Set up the env vars required by one of the underlying packages, either chatgpt (the unofficial API) or Pawan's chatgpt-io (recommended) which only requires one env var (CHATGPT_SESSION_TOKEN)
+5. Make sure the frontend has a .env file with the VITE_BACKEND_URL=http://localhost:3001 env var set
+6. You are now ready to use TalkGPT!
 
 ## Usage
 
@@ -45,7 +46,7 @@ To use TalkGPT, run the following commands in your one terminal:
 This will start the TalkGPT server, then in another terminal run:
 
     cd frontend
-    yarn start
+    yarn dev
     
 This will start client (running on Vite)
 
