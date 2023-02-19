@@ -1,4 +1,4 @@
-import {ChatGPTAPIBrowser} from 'chatgpt'
+import { ChatGPTAPI, ChatGPTUnofficialProxyAPI } from 'chatgpt'
 import express from 'express';
 import cors from 'cors';
 
@@ -13,20 +13,17 @@ app.get('/', (req, res) => {
 });
 
 let api: any;
-if (process.env.USE_CHATGPT_API) {
-    api = new ChatGPTAPIBrowser({
-        email: process.env.OPENAI_EMAIL!,
-        password: process.env.OPENAI_PASSWORD!,
-        debug: true,
-        markdown: false,
-    });
-} else if (process.env.CHATGPT_SESSION_TOKEN) {
+if (process.env.OPENAI_API_KEY)
+    api = new ChatGPTAPI({ apiKey: process.env.OPENAI_API_KEY });
+else if (process.env.OPENAI_ACCESS_TOKEN)
+    api = new ChatGPTUnofficialProxyAPI ( { accessToken: process.env.OPENAI_ACCESS_TOKEN })
+else if (process.env.CHATGPT_SESSION_TOKEN)
     api = pawan;
-} else {
+else
     api = pup;
-}
 
-await api.initSession();
+if (typeof api.initSession === 'function')
+    await api.initSession();
 
 app.get('/gpt/:message', async (req, res) => {
     try {

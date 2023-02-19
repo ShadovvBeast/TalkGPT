@@ -39,7 +39,7 @@
   "dependencies": {
     "@sparticuz/chromium": "109",
     "@tsconfig/node18": "^1.0.1",
-    "chatgpt": "^3.5.1",
+    "chatgpt": "^4.7.0",
     "chatgpt-io": "^1.1.1",
     "cors": "^2.8.5",
     "express": "^4.18.2",

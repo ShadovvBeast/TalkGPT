@@ -32,7 +32,7 @@ To install TalkGPT, follow these steps:
     cd frontend
     yarn
     ```
-4. Set up the env vars required by one of the underlying packages, either chatgpt (the unofficial API) or Pawan's chatgpt-io (recommended) which only requires one env var (CHATGPT_SESSION_TOKEN)
+4. Set up the env vars required by one of the underlying packages, either chatgpt (the unofficial API, now enabling the usage of the official API by providing the OPENAI_API_KEY env var or an unofficial proxy by providing the OPENAI_ACCESS_TOKEN env var) or Pawan's chatgpt-io by providing the CHATGPT_SESSION_TOKEN env var 
 5. Make sure the frontend has a .env file with the VITE_BACKEND_URL=http://localhost:3001 env var set
 6. You are now ready to use TalkGPT!
 
