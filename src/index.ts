@@ -1,12 +1,11 @@
-import { ChatGPTAPI, ChatGPTUnofficialProxyAPI } from 'chatgpt'
+import { ChatGPTUnofficialProxyAPI } from 'chatgpt'
 import express from 'express';
 import cors from 'cors';
+import * as openai from './openai.js';
 
 const app = express()
 app.use(cors());
-const port = 3001;
-import * as pup from './puppeteer.js';
-import * as pawan from './pawan.js';
+const port = process.env.PORT || 3001;
 
 app.get('/', (req, res) => {
     res.send('OK')
@@ -14,13 +13,9 @@ app.get('/', (req, res) => {
 
 let api: any;
 if (process.env.OPENAI_API_KEY)
-    api = new ChatGPTAPI({ apiKey: process.env.OPENAI_API_KEY });
+    api = openai;
 else if (process.env.OPENAI_ACCESS_TOKEN)
     api = new ChatGPTUnofficialProxyAPI ( { accessToken: process.env.OPENAI_ACCESS_TOKEN })
-else if (process.env.CHATGPT_SESSION_TOKEN)
-    api = pawan;
-else
-    api = pup;
 
 if (typeof api.initSession === 'function')
     await api.initSession();
