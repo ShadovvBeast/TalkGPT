@@ -40,7 +40,7 @@ To install TalkGPT, follow these steps:
 
 ## Usage
 
-To use TalkGPT, run the following commands in your one terminal:
+To use TalkGPT, run the following commands in the root folder in a terminal:
 
     yarn build
     yarn start
